@@ -1,56 +1,79 @@
 <!DOCTYPE html>
-<title>injection</title>
+<title>Minjection</title>
 <head>
     <style>
-        .ani1{
-            animation-name: anima1;
-            animation-duration: 2s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-
+      .one{
+        background-color: rgb(255, 196, 0);
+        margin-top: 0px;
+        padding: 6%;
+        color: white;
+        font-family: cursive;
         }
-        @keyframes anima1 {
-            60%{border-color: rgb(241, 151, 32);}
-            100%{border-color: rgb(0, 0, 0);}
-    
-        }
-
     </style>
-    <body style="background-color: rgb(0, 0, 0); color: white;">
-        <center><h1 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">WELCOME TO MICROINJECTION</h1>
-        <div  class="ani1" style="border: 2px solid #f38c2b; width:20%; padding: 75px; border-radius: 25px; background-color: transparent; background-color: rgb(250, 190, 230); margin-top:10%; background-color: transparent;" >
-           <H2 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">LOGIN</H2>
-            <div style="margin-top:0%;"> <input type="text"  id="i1" placeholder="Username" style= "margin-top: 10px; border: hidden;border-radius: 5px;"></br>
-            <input type="text"  id="i2" placeholder="Password" style="margin-top: 10px; border: hidden;border-radius: 5px;"><br>
-            <button onclick="submit()" style="margin-top: 10px; background-color: green; color: white; border: hidden; height: 30%; width: 20%; border-radius: 5px;">submit</button></div>
+    <body>
+        <div class="one">
+            <h1>MICROINJECTION</h1>
+            <h3 style="color: rgb(255, 60, 0)">on extremely buggy web app !</h3>  
         </div>
-        <div style="margin-top: 30PX;">
-    
-       <k id="k10"></k>
-         
-        </div>
-        <h4>This web application developed for testing </h4>
-        <h2>Developed by MICROINTEL </h2>
-        </center>
-        <script>
-            function submit(){
-            var a=document.getElementById("i1").value;
-            var b=document.getElementById("i2").value;
-        
-            if ((a=="") || (b=="") ){
-                document.getElementById("k10").innerHTML="";
-                window.alert("invalid username_&_password")
+    <div style="margin-top: -18%;margin-left: 30%;"><img src="https://bwapp.hakhub.net/images/bee_1.png"></div>
+    <div style="margin-left: 60%;">
+        <label for="a1" style="font-family: cursive;color: rgb(0, 0, 0); font-size: 35px;">choose your bug </label>
+        <select id="a1" style="width: 50%;">
+           <option value="1">html-injection</option>
+           <option value="2">sql-injection</option>
+           <option value="3" >xss-scripting</option>
+           <option value="4">get-method</option>
+           <option value="5">post-method</option>
+        </select>
+        <button onclick="my()">Hack</button>
+    </div>
+    <div id="a2" style="margin-top: 10%; font-family: cursive;">
+
+       
+    </div>
+    <div style="margin-left:60% ;">
+        <img src="https://bwapp.hakhub.net/images/owasp.png" >
+        <img src="https://bwapp.hakhub.net/images/zap.png" >
+        <img src="https://bwapp.hakhub.net/images/netsparker.png">
+        <img src="https://bwapp.hakhub.net/images/mk.png" >
+        <img src="https://bwapp.hakhub.net/images/mme.png" >
+    </div>
+    <script>
+        function my(){
+            var a=document.getElementById("a1").value;
+            if (a=="1"){
+                document.getElementById("a2").innerHTML=`        <label for="b1" style="color: grey;">Firstname</label>
+        <input id="b1"   ></br>
+        <p></p>
+        <label for="b2" style="color: grey; ">Lastname</label>
+        <input id="b2"  ></br>
+        <p></p>
+        <button onclick="my2()">go</button>
+        <h3 id="b3"></h3>`
+
 
             }
-            else{
-                window.alert("login successful")
-            document.getElementById("k10").innerHTML="WELCOME "+ a;
-
-           
-            }
+        else if(a=="2"){
+            window.open("https://bwapp.hakhub.net/sqli_2.php")
         }
-            
-
-        </script>
+        else if(a=="3"){
+            window.open("https://bwapp.hakhub.net/sqli_2.php")
+        }
+        else if(a=="4"){
+            window.open("https://bwapp.hakhub.net/sqli_2.php")
+        }
+        else if(a=="5"){
+            window.open("https://bwapp.hakhub.net/sqli_2.php")
+        }
+        }
+        function my2(){
+           var a=document.getElementById("b1").value;
+            var b= document.getElementById("b2").value;
+            document.getElementById("b3").innerHTML="welcome "+a+" "+b;
+        
+           
+        }
+    </script>
     </body>
-</head>
+    
+    </head>
